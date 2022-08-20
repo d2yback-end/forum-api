@@ -9,8 +9,8 @@ const comments = require('../../Interfaces/http/api/comments');
 
 const createServer = async (container) => {
   const server = Hapi.server({
-    host: process.env.HOST,
     port: process.env.PORT,
+    host: process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0',
   });
 
   await server.register([
