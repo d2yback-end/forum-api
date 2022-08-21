@@ -2,7 +2,8 @@ name: Continuous Integration
 
 on:
   pull_request:
-    branches: -main
+    branches:
+      - main
 
 jobs:
   test:
@@ -11,6 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
       - uses: actions/checkout@v2
